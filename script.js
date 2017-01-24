@@ -9,7 +9,7 @@ $(function () {
     var generator = {
         tableCols: function () {
             var out = ['<table class="cols"><tr>'];
-            for (var i = 1; i < 9; i++) {
+            for (var i = 8; i > 0; i--) {
                 out.push('<td data-col="' + i + '">' + i + '</td>');
             }
             out.push('</tr></table>');
@@ -27,7 +27,7 @@ $(function () {
             var out = ['<table class="leds">'];
             for (var i = 1; i < 9; i++) {
                 out.push('<tr>');
-                for (var j = 1; j < 9; j++) {
+                for (var j = 8; j > 0; j--) {
                     out.push('<td data-row="' + i + '" data-col="' + j + '"></td>');
                 }
                 out.push('</tr>');
@@ -80,7 +80,7 @@ $(function () {
                     var byte = patterns[i].substr(2 * j, 2);
                     byte = parseInt(byte, 16).toString(2);
                     byte = ('00000000' + byte).substr(-8);
-                    byte = byte.split('').reverse().join('');
+                    //byte = byte.split('').reverse().join('');
                     out.push('  B');
                     out.push(byte);
                     out.push(',\n');
